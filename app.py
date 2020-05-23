@@ -37,9 +37,10 @@ class Item(Resource):
 
         data = parser.parse_args()
         # data = request.get_json()
-        print(data['another'])
+        # print(data['another'])
 
         item = next(filter(lambda x: x['name'] == name, items), None)
+
         if item is None:
             item = {'name': name, 'price': data['price']}
             items.append(item)
